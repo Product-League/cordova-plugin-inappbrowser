@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+### [Unreleased]
+
+### [4.0.0-OS14] - 2023-08-31
+### Fixes
+- Do not lose callbackContext when opening a SYSTEM url (https://outsystemsrd.atlassian.net/browse/RMET-2802).
+- Fix beforeLoad not being called in some requests (https://outsystemsrd.atlassian.net/browse/RMET-2802).
+- Fix memory leak with webview (https://outsystemsrd.atlassian.net/browse/RMET-2802).
+
+### [4.0.0-OS13] - 2023-01-18
+### Fix
+- Android - InAppBrowser not opening when no options are passed - check for next element before trying to obtain. (https://outsystemsrd.atlassian.net/browse/RMET-2119)
+
+### [4.0.0-OS12] - 2022-06-29
+### Fix
+- Removed hook that adds swift support and added the plugin as dependecy. (https://outsystemsrd.atlassian.net/browse/RMET-1680)
+
+### [4.0.0-OS11] - 2022-05-23
+### Fix
+- Added permission request for camera and microphone on Android's ChromeWebClient.
+
 ### [4.0.0-OS9] - 2021-12-07
 ### Fix
 - Removed Swift extensions to compile projects names with non-ascii characters.
