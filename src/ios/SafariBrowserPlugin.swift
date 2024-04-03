@@ -39,7 +39,7 @@ class SafariBrowserPlugin: NSObject, SFSafariViewControllerDelegate {
                 let window = UIWindow(frame: UIScreen.main.bounds)
                 let tmpController = UIViewController()
                 window.rootViewController = tmpController
-                window.windowLevel = UIWindow.Level.normal
+                window.windowLevel = UIWindowLevelNormal
                 self.window = window
             }
             if !hidden { self.window?.makeKeyAndVisible() }
