@@ -320,10 +320,16 @@ static CDVWKInAppBrowser* instance = nil;
 
 - (void)openInSystem:(NSURL*)url
 {
-    if ([[UIApplication sharedApplication] openURL:url] == NO) {
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)]) {
+        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+            if (!success) {
+                [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:CDVPluginHandleOpenURLNotification object:url]];
+            }
+        }];
+    } else {
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:CDVPluginHandleOpenURLNotification object:url]];
         [[UIApplication sharedApplication] openURL:url];
-    }
+    } 
 }
 
 - (void)loadAfterBeforeload:(CDVInvokedUrlCommand*)command
