@@ -4,86 +4,74 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### [Unreleased]
+The changes documented here do not include those from the original repository.
 
-### [4.0.0-OS14] - 2023-08-31
-### Fixes
-- Do not lose callbackContext when opening a SYSTEM url (https://outsystemsrd.atlassian.net/browse/RMET-2802).
-- Fix beforeLoad not being called in some requests (https://outsystemsrd.atlassian.net/browse/RMET-2802).
-- Fix memory leak with webview (https://outsystemsrd.atlassian.net/browse/RMET-2802).
+## 1.3.0
 
-### [4.0.0-OS13] - 2023-01-18
-### Fix
-- Android - InAppBrowser not opening when no options are passed - check for next element before trying to obtain. (https://outsystemsrd.atlassian.net/browse/RMET-2119)
+#### Features
 
-### [4.0.0-OS12] - 2022-06-29
-### Fix
-- Removed hook that adds swift support and added the plugin as dependecy. (https://outsystemsrd.atlassian.net/browse/RMET-1680)
+- Users now receive an event when the navigation occurs (for openInWebView option only) (https://outsystemsrd.atlassian.net/browse/RMET-4120).
 
-### [4.0.0-OS11] - 2022-05-23
-### Fix
-- Added permission request for camera and microphone on Android's ChromeWebClient.
+### Android
 
-### [4.0.0-OS9] - 2021-12-07
-### Fix
-- Removed Swift extensions to compile projects names with non-ascii characters.
+#### Chores
 
-### [4.0.0-OS8] - 2021-11-04
-### Fix
-- New plugin release to include metadata tag in Extensibility Configurations in the OS wrapper
+- Update dependency to Android native library (https://outsystemsrd.atlassian.net/browse/RMET-3982).
 
-### [4.0.0-OS7] - 2021-09-16
-### Fix
-- Removed code that is only used in iOS 11 and older [RPM-1453](https://outsystemsrd.atlassian.net/browse/RPM-1453)
+## 1.2.1
 
-### [4.0.0-OS6] - 2021-06-30
-- On iOS page scrolling back to top after clicking Done in form input field [RMET-753](https://outsystemsrd.atlassian.net/browse/RMET-753)
+### Android
 
-## [4.0.0-OS5] - 2021-05-14
-### Fix
-- Close button has an incorrect name after setting button caption as "Empty" (Android) [RMET-331](https://outsystemsrd.atlassian.net/browse/RMET-331)
+#### Fixes
 
-## [3.1.0-OS3] - 2020-01-08
-### Changes
-- Add compile-time decision for disabling UIWebView [RNMT-3569](https://outsystemsrd.atlassian.net/browse/RNMT-3569)
+- Remove unnecessary permissions from AndroidManifest (https://outsystemsrd.atlassian.net/browse/RMET-3987).
 
-### Fixes
-- Background color now takes dark mode into account [RNMT-3631](https://outsystemsrd.atlassian.net/browse/RNMT-3631)
-- Improvements to view positioning depending on which options are used [RNMT-3631](https://outsystemsrd.atlassian.net/browse/RNMT-3631)
-- Fixes related to the usage of safe area insets [RNMT-3631](https://outsystemsrd.atlassian.net/browse/RNMT-3631)
+## 1.2.0
 
-## [3.1.0-OS2] - 2019-10-04
-### Fixes
-- Now opens in iOS 13 when using WKWebView [RNMT-3324](https://outsystemsrd.atlassian.net/browse/RNMT-3324)
-- Options unmarshalling is now based on property type instead of content type [RNMT-3309](https://outsystemsrd.atlassian.net/browse/RNMT-3309)
+### Android
 
-## [3.1.0-OS1] - 2019-09-17
-### Fixes
-- User-Agent is no longer incorrect in the first usage of open [RNMT-3299](https://outsystemsrd.atlassian.net/browse/RNMT-3299)
-- Keyboard no longer breaks UI due to scroll view not being repositioned [RNMT-3293](https://outsystemsrd.atlassian.net/browse/RNMT-3293)
+#### Chores
 
-## [3.1.0-OS] - 2019-09-10
-### Changes
-- Merge upstream (3.1.0) into OutSystems branch [RNMT-3220](https://outsystemsrd.atlassian.net/browse/RNMT-3220)
+- Bumps Kotlin and Gradle versions (https://outsystemsrd.atlassian.net/browse/RMET-3887).
 
-### Additions
-- Use WKWebView engine when available [RNMT-3220](https://outsystemsrd.atlassian.net/browse/RNMT-3220)
+## 1.1.0
+
+### Android
+
+#### Chores
+- Remove unnecesary `kotlin-kapt` plugin from build.gradle file (https://outsystemsrd.atlassian.net/browse/RMET-3804).
+
+### Features
+- Handle Edge-to-Edge on all Android versions.
+
+## 1.0.2
+- Android: Fix issue where the custom tabs browser wasn't being closed when navigating back to the app
+- Android: Fix race condition that caused the `BrowserFinished` event to not be fired in some instances with the system browser
 
 ### Fixes
-- Top safe area inset is now being correctly used when using WKWebView [RNMT-3220](https://outsystemsrd.atlassian.net/browse/RNMT-3220)
+- Android: Fix issue where some URLs weren't being open in Custom Tabs and the External Browser (https://outsystemsrd.atlassian.net/browse/RMET-3680)
 
-## [3.0.0-OS1] - 2019-06-04
-### Additions
-- Add a hook to conditionally set cleartextTrafficPermitted to true [RNMT-2921](https://outsystemsrd.atlassian.net/browse/RNMT-2921)
+## 1.0.0
 
-## [3.0.0-os] - 2018-12-04
-### Changes
-- Merge upstream (3.0.0) into OutSystems branch
-
-[Unreleased]: https://github.com/OutSystems/cordova-plugin-inappbrowser/compare/3.1.0-OS3...HEAD
-[3.1.0-OS3]: https://github.com/OutSystems/cordova-plugin-inappbrowser/compare/3.1.0-OS2...3.1.0-OS3
-[3.1.0-OS2]: https://github.com/OutSystems/cordova-plugin-inappbrowser/compare/3.1.0-OS1...3.1.0-OS2
-[3.1.0-OS1]: https://github.com/OutSystems/cordova-plugin-inappbrowser/compare/3.1.0-OS...3.1.0-OS1
-[3.1.0-OS]: https://github.com/OutSystems/cordova-plugin-inappbrowser/compare/3.0.0-OS1...3.1.0-OS
-[3.0.0-OS1]: https://github.com/OutSystems/cordova-plugin-inappbrowser/compare/3.0.0-os...3.0.0-OS1
-[3.0.0-os]: https://github.com/OutSystems/cordova-plugin-inappbrowser/compare/1.7.0-os...3.0.0-os
+### Features
+- Add `Close` feature for WebView and System Browser on Android (https://outsystemsrd.atlassian.net/browse/RMET-3428).
+- Add error codes and messages on iOS (https://outsystemsrd.atlassian.net/browse/RMET-3465).
+- Format error codes and messages on Android (https://outsystemsrd.atlassian.net/browse/RMET-3466).
+- Add permissions requests and opening file chooser to `OpenInWebView` feature on Android (https://outsystemsrd.atlassian.net/browse/RMET-3534).
+- Add error and loading screens for `OpenInWebView` feature for Android (https://outsystemsrd.atlassian.net/browse/RMET-3492).
+- Add custom error page for `OpenInWebView` feature (https://outsystemsrd.atlassian.net/browse/RMET-3491).
+- Add browser events to `OpenInSystemBrowser` feature on Android (https://outsystemsrd.atlassian.net/browse/RMET-3431).
+- Add `OpenInSystemBrowser`'s features on Android (https://outsystemsrd.atlassian.net/browse/RMET-3424).
+- Add possibility to override the user agent used in `OpenInWebView`'s webview (https://outsystemsrd.atlassian.net/browse/RMET-3490).
+- Add browser events to `OpenInWebView` feature (https://outsystemsrd.atlassian.net/browse/RMET-3432).
+- Add `OpenInWebView` with current features and default UI on Android (https://outsystemsrd.atlassian.net/browse/RMET-3426).
+- Add `Close` feature on iOS (https://outsystemsrd.atlassian.net/browse/RMET-3427).
+- Add `OpenInWebView`'s interface customisations on iOS (https://outsystemsrd.atlassian.net/browse/RMET-3489).
+- Add `OpenInWebView`'s event listeners on iOS (https://outsystemsrd.atlassian.net/browse/RMET-3430).
+- Add `OpenInWebView`'s features on iOS (https://outsystemsrd.atlassian.net/browse/RMET-3425).
+- Add `OpenInSystemBrowser`'s event listeners on iOS (https://outsystemsrd.atlassian.net/browse/RMET-3429).
+- Add `OpenInSystemBrowser`'s features on iOS (https://outsystemsrd.atlassian.net/browse/RMET-3423).
+- Add `OpenInExternalBrowser`'s features on Android (https://outsystemsrd.atlassian.net/browse/RMET-3422).
+- Add `OpenInExternalBrowser` on iOS (https://outsystemsrd.atlassian.net/browse/RMET-3421).
+- [Bridge] Adds cordova bridge, with types (https://outsystemsrd.atlassian.net/browse/RMET-3419).
+- Add content to `README` (https://outsystemsrd.atlassian.net/browse/RMET-3473).
